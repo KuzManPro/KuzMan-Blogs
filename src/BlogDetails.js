@@ -20,11 +20,11 @@ const BlogDetails = () => {
             { isPending && <div>Loading...</div> }
             { error && <div>{ error }</div>}
             { blog && (
-                <article>
+                <article className="blog-article">
                     <h2>{ blog.title }</h2>
                     <p>Written by { blog.author }</p>
                     <div>{ blog.body }</div>
-                    <button onClick={handleClick}>Delete</button>
+                    <button onClick={handleClick} className = "blog-button">Delete</button>
                 </article>
             )}
         </div>
