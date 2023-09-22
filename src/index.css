@@ -12,13 +12,26 @@
   height: 100vh;
   overflow: auto;
 }
+.switch {
+  display: flex;
+  width: 100vw;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+.switch label {
+  margin: 10px;
+}
+#dark .switch label {
+  color: #fff;
+}
 .navbar {
   padding: 30px;
   display: flex;
   align-items: center;
   max-width: 70%;
   margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid #000;
 }
 #dark .navbar {
   border-bottom: 1px solid #be5c00;
@@ -55,6 +68,9 @@
 #dark .navbar a:hover {
   color: #be5c00;
 }
+.navbar button:hover {
+  color: #000;
+}
 .content {
   max-width: 600px;
   margin: 20px auto;
@@ -79,16 +95,16 @@
 .blog-preview {
   padding: 10px 16px;
   margin: 20px 0;
-  border-bottom: 1px solid #fafafa;
+  border-bottom: 1px solid #000;
 }
 #dark .blog-preview {
   border-bottom: 1px solid #be5c00;
 }
 .blog-preview:hover {
-  box-shadow: 1px 3px 5px #fff;
+  box-shadow: 1px 3px 5px #000;
 }
 #dark .blog-preview:hover {
-  box-shadow: 1px 3px 5px #000;
+  box-shadow: 1px 3px 5px #be5c00;
 }
 .blog-preview h2 {
   font-size: 20px;
@@ -137,6 +153,9 @@
   text-align: left;
   display: block;
 }
+#dark .create label {
+  color: #fff;
+}
 .create h2 {
   font-size: 20px;
   color: #be5c00;
@@ -158,21 +177,30 @@
   border-radius: 8px;
   cursor: pointer;
 }
+.create button:hover {
+  color: #000;
+}
 
 /* page not found */
 .not-found h2 {
-  font-size: 30px;
+  font-size: 40px;
   color: #be5c00;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .not-found p {
   margin-bottom: 20px;
+}
+#dark .not-found p {
+  color: #fff;
 }
 .not-found button {
   background: #be5c00;
   color: #fff;
   border: 0;
-  padding: 8px;
+  padding: 10px;
   border-radius: 8px;
   cursor: pointer;
+}
+.not-found button:hover {
+  color: #000;
 }
