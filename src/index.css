@@ -14,8 +14,10 @@
 }
 .switch {
   display: flex;
-  width: 100vw;
-  height: 100px;
+  max-width: 20%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 0px;
   justify-content: center;
   align-items: center;
 }
@@ -31,6 +33,7 @@
   align-items: center;
   max-width: 70%;
   margin: 0 auto;
+  padding-top: 0px;
   border-bottom: 1px solid #000;
 }
 #dark .navbar {
