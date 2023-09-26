@@ -9,7 +9,6 @@ const DarkMode = () => {
 
   return (
     <div className='switch'>
-      <label>{theme === 'light' ? 'Light Mode' : 'Dark Mode'}</label>
       <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'}
       checkedHandleIcon={<img src={moonIcon} alt="Moon" 
       style={{
