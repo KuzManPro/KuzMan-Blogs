@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/KuzMan-Blogs/static/css/main.795d5ba1.css",
-    "main.js": "/KuzMan-Blogs/static/js/main.c93a725d.js",
+    "main.js": "/KuzMan-Blogs/static/js/main.dab790a9.js",
     "static/media/moon.ico": "/KuzMan-Blogs/static/media/moon.a4877d045519ddee7a7c.ico",
     "static/media/sun.ico": "/KuzMan-Blogs/static/media/sun.54e23e31fa4c4f6c08a6.ico",
     "index.html": "/KuzMan-Blogs/index.html",
     "main.795d5ba1.css.map": "/KuzMan-Blogs/static/css/main.795d5ba1.css.map",
-    "main.c93a725d.js.map": "/KuzMan-Blogs/static/js/main.c93a725d.js.map"
+    "main.dab790a9.js.map": "/KuzMan-Blogs/static/js/main.dab790a9.js.map"
   },
   "entrypoints": [
     "static/css/main.795d5ba1.css",
-    "static/js/main.c93a725d.js"
+    "static/js/main.dab790a9.js"
   ]
 }
