@@ -4,11 +4,11 @@ import { useHistory } from "react-router-dom";
 
 const BlogDetails = () => {
     const { id } = useParams()
-    const { data: blog, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);
+    const { data: blog, error, isPending } = useFetch('https://api.jsonbin.io/v3/b/6515dc410574da7622b1b7fe/blogs/' + id);
     const history = useHistory();
 
     const handleClick = () => {
-        fetch('http://localhost:8000/blogs/' + blog.id, {
+        fetch('https://api.jsonbin.io/v3/b/6515dc410574da7622b1b7fe/blogs/' + blog.id, {
             method: 'DELETE'
         }).then(() => {
             history.push('/');

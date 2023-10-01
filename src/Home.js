@@ -2,7 +2,7 @@ import BlogList from './BlogList';
 import useFetch from './useFetch';
 
 const Home = () => {
-    const{data: blogs, isPending, error} = useFetch('https://api.jsonbin.io/v3/b/6515daf854105e766fbb1b15');
+    const{data: blogs, isPending, error} = useFetch('https://api.jsonbin.io/v3/b/6515dc410574da7622b1b7fe/blogs/');
 
     return ( 
         <div className="home">
