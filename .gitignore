@@ -1,2 +1,4 @@
 node_modules
 START SERVER.txt
+data
+src/firebase.js

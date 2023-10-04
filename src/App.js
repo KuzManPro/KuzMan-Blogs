@@ -1,10 +1,13 @@
-import Navbar from './Navbar';
-import Home from "./Home";
+import Navbar from './components/Navbar';
+import Home from "./components/Home";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './Create';
 import BlogDetails from './BlogDetails';
-import NotFound from './NotFound';
+import NotFound from './components/NotFound';
 import React, { createContext, useState } from 'react';
+import SignIn from './auth/SignIn';
+import SignUp from './auth/SignUp';
+import AuthDetails from './auth/AuthDetails';
 
 export const ThemeContext = createContext();
 
@@ -20,6 +23,9 @@ function App() {
       <Router>
         <div className={`App`} id={theme}>
           <Navbar />
+          <SignIn />
+          <SignUp />
+          <AuthDetails />
           <div className="content">
             <Switch>
               <Route exact path="/">

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import ReactSwitch from 'react-switch';
-import { ThemeContext } from './App';
+import { ThemeContext } from '../App';
 import sunIcon from './theme_img/sun.ico';
 import moonIcon from './theme_img/moon.ico';
 
