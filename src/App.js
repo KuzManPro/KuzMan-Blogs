@@ -1,13 +1,13 @@
 import Navbar from './components/Navbar';
 import Home from "./components/Home";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Create from './Create';
-import BlogDetails from './BlogDetails';
+import Create from './components/Create';
+import BlogDetails from './components/BlogDetails';
 import NotFound from './components/NotFound';
 import React, { createContext, useState } from 'react';
-import SignIn from './auth/SignIn';
-import SignUp from './auth/SignUp';
-import AuthDetails from './auth/AuthDetails';
+import SignIn from './components/auth/SignIn';
+import SignUp from './components/auth/SignUp';
+import AuthDetails from './components/auth/AuthDetails';
 
 export const ThemeContext = createContext();
 
