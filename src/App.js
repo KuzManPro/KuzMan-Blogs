@@ -5,9 +5,9 @@ import Create from './components/Create';
 import BlogDetails from './components/BlogDetails';
 import NotFound from './components/NotFound';
 import React, { createContext, useState } from 'react';
-import SignIn from './components/auth/SignIn';
-import SignUp from './components/auth/SignUp';
-import AuthDetails from './components/auth/AuthDetails';
+// import SignIn from './components/auth/SignIn';
+// import SignUp from './components/auth/SignUp';
+// import AuthDetails from './components/auth/AuthDetails';
 
 export const ThemeContext = createContext();
 
@@ -23,9 +23,9 @@ function App() {
       <Router>
         <div className={`App`} id={theme}>
           <Navbar />
-          <SignIn />
+          {/* <SignIn />
           <SignUp />
-          <AuthDetails />
+          <AuthDetails /> */}
           <div className="content">
             <Switch>
               <Route exact path="/">

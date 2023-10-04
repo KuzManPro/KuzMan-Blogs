@@ -15,7 +15,7 @@ const BlogDetails = () => {
         })
     }
 
-    return ( 
+    return (
         <div className="blog-details">
             { isPending && <div>Loading...</div> }
             { error && <div>{ error }</div>}
