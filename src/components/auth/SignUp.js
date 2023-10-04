@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from "../../firebase";
 
 const SignUp = () => {
     const [email, setEmail] = useState('');
@@ -9,6 +9,16 @@ const SignUp = () => {
     const signUp = (e) => {
         e.preventDefault();
         createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            console.log(userCredential)
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
+    const signInWithGoogle = (e) => {
+        e.preventDefault();
+        signInWithPopup(auth, googleProvider)
         .then((userCredential) => {
             console.log(userCredential)
         }).catch((error) => {
@@ -31,6 +41,7 @@ const SignUp = () => {
                     onChange={(e) => setPassword(e.target.value)}
                 ></input>
                 <button type="submit">Sign Up</button>
+                <button onClick={signInWithGoogle}>Sign In With Google</button>
             </form>
         </div>
     );
