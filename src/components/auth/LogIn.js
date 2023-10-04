@@ -2,11 +2,11 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 
-const SignIn = () => {
+const LogIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const signIn = (e) => {
+    const LogIn = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -18,7 +18,7 @@ const SignIn = () => {
 
     return ( 
         <div className="sign-in-container">
-            <form onSubmit={signIn}>
+            <form onSubmit={LogIn}>
                 <h1>Log In</h1>
                 <input type="email" 
                     placeholder="Enter your email"
@@ -36,4 +36,4 @@ const SignIn = () => {
     );
 }
     
-export default SignIn;
+export default LogIn;

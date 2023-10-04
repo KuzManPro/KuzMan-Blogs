@@ -5,7 +5,7 @@ import Create from './components/Create';
 import BlogDetails from './components/BlogDetails';
 import NotFound from './components/NotFound';
 import React, { createContext, useState } from 'react';
-import SignIn from './components/auth/SignIn';
+import SignIn from './components/auth/LogIn';
 import SignUp from './components/auth/SignUp';
 import AuthDetails from './components/auth/AuthDetails';
 
@@ -23,13 +23,17 @@ function App() {
       <Router>
         <div className={`App`} id={theme}>
           <Navbar />
-          <SignIn />
-          <SignUp />
           <AuthDetails />
           <div className="content">
             <Switch>
               <Route exact path="/">
                 <Home />
+              </Route>
+              <Route exact path="/signup">
+                <SignUp />
+              </Route>
+              <Route exact path="/signin">
+                <SignIn />
               </Route>
               <Route path="/create">
                 <Create />
