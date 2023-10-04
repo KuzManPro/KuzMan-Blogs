@@ -5,7 +5,7 @@ import Create from './components/Create';
 import BlogDetails from './components/BlogDetails';
 import NotFound from './components/NotFound';
 import React, { createContext, useState } from 'react';
-import SignIn from './components/auth/LogIn';
+import LogIn from './components/auth/LogIn';
 import SignUp from './components/auth/SignUp';
 import AuthDetails from './components/auth/AuthDetails';
 
@@ -32,8 +32,8 @@ function App() {
               <Route exact path="/signup">
                 <SignUp />
               </Route>
-              <Route exact path="/signin">
-                <SignIn />
+              <Route exact path="/login">
+                <LogIn />
               </Route>
               <Route path="/create">
                 <Create />

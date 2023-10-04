@@ -10,8 +10,11 @@ const Navbar = () => {
             <DarkMode />
             <div className="links">
                 <Link to="/">Home</Link>
-                <Link to="/create">
+                {/* <Link to="/create">
                     <button>New Blog</button>
+                </Link> */}
+                <Link to="/signup">
+                    <button>Sign Up</button>
                 </Link>
             </div>
         </nav>
