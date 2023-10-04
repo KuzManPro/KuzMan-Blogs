@@ -2,15 +2,18 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 const LogIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const history = useHistory();
 
     const LogIn = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
+            history.push('/');
             console.log(userCredential)
         }).catch((error) => {
             console.log(error);

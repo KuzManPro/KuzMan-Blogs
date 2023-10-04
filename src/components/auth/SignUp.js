@@ -2,15 +2,18 @@ import { useState } from "react";
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../../firebase";
 import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const history = useHistory();
 
     const signUp = (e) => {
         e.preventDefault();
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
+            history.push('/');
             console.log(userCredential)
         }).catch((error) => {
             console.log(error);
@@ -21,6 +24,7 @@ const SignUp = () => {
         e.preventDefault();
         signInWithPopup(auth, googleProvider)
         .then((userCredential) => {
+            history.push('/');
             console.log(userCredential)
         }).catch((error) => {
             console.log(error);
@@ -41,7 +45,7 @@ const SignUp = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 ></input>
-                <button type="submit">Create</button>
+                <button type="submit" >Create</button>
                 <button onClick={signInWithGoogle}>Log In With Google</button>
             </form>
             <p>Already have an account?</p>
