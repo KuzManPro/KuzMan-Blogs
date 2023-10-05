@@ -1,25 +1,25 @@
-import Navbar from './components/Navbar';
+import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Create from './components/Create';
-import BlogDetails from './components/BlogDetails';
-import NotFound from './components/NotFound';
-import React, { createContext, useState } from 'react';
-import LogIn from './components/auth/LogIn';
-import SignUp from './components/auth/SignUp';
-import AuthDetails from './components/auth/AuthDetails';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Create from "./components/Create";
+import BlogDetails from "./components/BlogDetails";
+import NotFound from "./components/NotFound";
+import React, { createContext, useState } from "react";
+import LogIn from "./components/auth/LogIn";
+import SignUp from "./components/auth/SignUp";
+import AuthDetails from "./components/auth/AuthDetails";
 
 export const ThemeContext = createContext();
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
-    setTheme((curr) => (curr === 'light' ? 'dark' : 'light'));
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
   };
 
   return (
-    <ThemeContext.Provider value={{theme, toggleTheme}}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <Router>
         <div className={`App`} id={theme}>
           <AuthDetails />
@@ -41,7 +41,7 @@ function App() {
               <Route path="/blogs/:id">
                 <BlogDetails />
               </Route>
-              <Route path ='*'>
+              <Route path="*">
                 <NotFound />
               </Route>
             </Switch>

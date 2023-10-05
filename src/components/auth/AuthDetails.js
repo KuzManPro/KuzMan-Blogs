@@ -3,35 +3,40 @@ import { auth } from "../../firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
 const AuthDetails = () => {
-    const [authUser, setAuthUser] = useState(null)
+  const [authUser, setAuthUser] = useState(null);
 
-    useEffect(() => {
-        const listen = onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setAuthUser(user)
-            } else {
-                setAuthUser(null)
-            }
-        });
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user);
+      } else {
+        setAuthUser(null);
+      }
+    });
 
-        return () => {
-            listen();
-        }
-    }, []);
+    return () => {
+      listen();
+    };
+  }, []);
 
-    const userSignOut = () => {
-        signOut(auth).then(() => {
-        }).catch(error => console.log(error))
-    }
+  const userSignOut = () => {
+    signOut(auth)
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
 
-    return (
-        <div className="auth-details">
-            { authUser ? <>
-            <p>{`Logged In as ${authUser.email}`}</p>
-            <button onClick={userSignOut}>Sign Out</button>
-            </> : <p>Signed Out</p> }
-        </div>
-    );
-}
- 
+  return (
+    <div className="auth-details">
+      {authUser ? (
+        <>
+          <p>{`Logged In as ${authUser.email}`}</p>
+          <button onClick={userSignOut}>Sign Out</button>
+        </>
+      ) : (
+        <p>Signed Out</p>
+      )}
+    </div>
+  );
+};
+
 export default AuthDetails;
