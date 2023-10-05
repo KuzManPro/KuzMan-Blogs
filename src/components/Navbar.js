@@ -2,7 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import DarkMode from './DarkMode';
 
-const Navbar = () => {
+const Navbar = ({authUser}) => {
+    console.log("authUser in Navbar:", authUser);
 
     return ( 
         <nav className="navbar">
@@ -10,13 +11,17 @@ const Navbar = () => {
             <DarkMode />
             <div className="links">
                 <Link to="/">Home</Link>
-                {/* <Link to="/create">
-                    <button>New Blog</button>
-                </Link> */}
-                <Link to="/signup">
-                    <button>Sign Up</button>
-                </Link>
+                {authUser ? (
+                    <Link to="/create">
+                        <button>New Blog</button>
+                    </Link>
+                ) : (
+                    <Link to="/login">
+                        <button>Log In</button>
+                    </Link>
+                )}
             </div>
+            {authUser && <p>Signed In as {authUser.email}</p>}
         </nav>
     );
 }

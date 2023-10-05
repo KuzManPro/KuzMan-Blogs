@@ -22,8 +22,8 @@ function App() {
     <ThemeContext.Provider value={{theme, toggleTheme}}>
       <Router>
         <div className={`App`} id={theme}>
-          <Navbar />
           <AuthDetails />
+          <Navbar />
           <div className="content">
             <Switch>
               <Route exact path="/">

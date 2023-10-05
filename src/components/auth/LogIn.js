@@ -9,12 +9,12 @@ const LogIn = () => {
     const [password, setPassword] = useState('');
     const history = useHistory();
 
-    const LogIn = (e) => {
+    const handleLogIn = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             history.push('/');
-            console.log(userCredential)
+            console.log("User logged in:", userCredential.user);
         }).catch((error) => {
             console.log(error);
         })
@@ -22,7 +22,7 @@ const LogIn = () => {
 
     return ( 
         <div className="sign-in-container">
-            <form onSubmit={LogIn}>
+            <form onSubmit={handleLogIn}>
                 <h1>Log In</h1>
                 <input type="email" 
                     placeholder="Enter your email"
