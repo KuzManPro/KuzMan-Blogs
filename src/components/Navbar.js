@@ -25,7 +25,14 @@ const Navbar = () => {
         )}
       </div>
       {currentUser && <p>Signed In as {currentUser.email}</p> && (
-        <button onClick={() => logout()}>Sign out</button>
+        <button
+          onClick={() => logout()}
+          style={{
+            backgroundColor: "#990000",
+          }}
+        >
+          Sign Out
+        </button>
       )}
     </nav>
   );

@@ -4,7 +4,7 @@ import { auth, googleProvider } from "../../firebase";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-const SignUp = ({ setAuthUser }) => {
+const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -14,7 +14,6 @@ const SignUp = ({ setAuthUser }) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log("User signed up:", userCredential.user);
-        setAuthUser(userCredential.user);
         history.push("/");
       })
       .catch((error) => {
@@ -27,7 +26,6 @@ const SignUp = ({ setAuthUser }) => {
     signInWithPopup(auth, googleProvider)
       .then((userCredential) => {
         console.log("User signed up:", userCredential.user);
-        setAuthUser(userCredential.user);
         history.push("/");
       })
       .catch((error) => {
