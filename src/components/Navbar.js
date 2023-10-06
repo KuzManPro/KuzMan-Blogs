@@ -6,8 +6,6 @@ import { useAuth } from "./auth/AuthContext";
 const Navbar = () => {
   const { currentUser, logout } = useAuth();
 
-  console.log("authUser in Navbar:", currentUser);
-
   return (
     <nav className="navbar">
       <h1>KuzMan Blogs</h1>
