@@ -7,7 +7,6 @@ import NotFound from "./components/NotFound";
 import React, { createContext, useState } from "react";
 import LogIn from "./components/auth/LogIn";
 import SignUp from "./components/auth/SignUp";
-import AuthDetails from "./components/auth/AuthDetails";
 
 export const ThemeContext = createContext();
 
@@ -22,7 +21,6 @@ function App() {
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <Router>
         <div className={`App`} id={theme}>
-          <AuthDetails />
           <Navbar />
           <div className="content">
             <Switch>
