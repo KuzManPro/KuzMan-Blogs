@@ -6,8 +6,6 @@ import { getDocs, collection } from "firebase/firestore";
 const useData = () => {
   const [blogList, setBlogList] = useState([]);
   const blogsCollectionRef = collection(db, "blogs");
-  
-  console.log(blogList);
 
   useEffect(() => {
     const getBlogList = async () => {

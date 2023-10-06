@@ -1,8 +1,8 @@
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Create from "./components/Create";
-import BlogDetails from "./components/BlogDetails";
+import Create from "./components/blogs/Create";
+import BlogDetails from "./components/blogs/BlogDetails";
 import NotFound from "./components/NotFound";
 import React, { createContext, useState } from "react";
 import LogIn from "./components/auth/LogIn";
