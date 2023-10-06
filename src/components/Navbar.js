@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import DarkMode from "./DarkMode";
+import { useAuth } from "./auth/AuthContext";
 
-const Navbar = ({ authUser }) => {
-  console.log("authUser in Navbar:", authUser);
+const Navbar = () => {
+  const { currentUser, logout } = useAuth();
+
+  console.log("authUser in Navbar:", currentUser);
 
   return (
     <nav className="navbar">
@@ -11,7 +14,7 @@ const Navbar = ({ authUser }) => {
       <DarkMode />
       <div className="links">
         <Link to="/">Home</Link>
-        {authUser ? (
+        {currentUser ? (
           <Link to="/create">
             <button>New Blog</button>
           </Link>
@@ -21,7 +24,9 @@ const Navbar = ({ authUser }) => {
           </Link>
         )}
       </div>
-      {authUser && <p>Signed In as {authUser.email}</p>}
+      {currentUser && <p>Signed In as {currentUser.email}</p> && (
+        <button onClick={() => logout()}>Sign out</button>
+      )}
     </nav>
   );
 };

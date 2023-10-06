@@ -1,17 +1,18 @@
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { useAuth } from "./AuthContext";
 
 const LogIn = () => {
+  const { login } = useAuth();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
 
   const handleLogIn = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+    login(email, password)
       .then((userCredential) => {
         history.push("/");
         console.log("User logged in:", userCredential.user);
