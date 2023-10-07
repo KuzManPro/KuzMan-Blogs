@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 const SignUp = () => {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -37,6 +38,12 @@ const SignUp = () => {
     <div className="sign-in-container">
       <form onSubmit={handleSignUp}>
         <h1>Create an Account</h1>
+        <input
+          type="username"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        ></input>
         <input
           type="email"
           placeholder="Email"
