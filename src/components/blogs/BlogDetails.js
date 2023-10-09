@@ -43,6 +43,10 @@ const BlogDetails = () => {
     }
   };
 
+  const handleDisabledButton = () => {
+    alert("Can't delete someone else's blog!");
+  };
+
   return (
     <div className="blog-details">
       {blog && (
@@ -56,10 +60,10 @@ const BlogDetails = () => {
             <button onClick={handleDelete}>Delete Blog</button>
           ) : (
             <button
-              disabled="disabled"
               style={{
                 backgroundColor: "gray",
               }}
+              onClick={handleDisabledButton}
             >
               Delete Blog
             </button>
