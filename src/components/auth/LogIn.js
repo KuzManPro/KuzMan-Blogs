@@ -40,9 +40,9 @@ const LogIn = () => {
         ></input>
         <button type="submit">Log In</button>
       </form>
-      <p>Don't have an account?</p>
+      <p className="no-account">Don't have an account?</p>
       <Link to="/signup">
-        <p>Click here to create one</p>
+        <button>Click here to create one</button>
       </Link>
     </div>
   );

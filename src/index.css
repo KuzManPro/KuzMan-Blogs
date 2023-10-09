@@ -182,6 +182,50 @@
   color: #000;
 }
 
+/* log in */
+.sign-in-container {
+  text-align: center;
+}
+.sign-in-container h1 {
+  color: #be5c00;
+  margin-bottom: 30px;
+}
+.sign-in-container input {
+  text-align: center;
+}
+.sign-in-container input,
+.sign-in-container select {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  padding: 6px 10px;
+  margin: 10px auto;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.sign-in-container button {
+  background: #be5c00;
+  color: #fff;
+  margin: 10px;
+  margin-bottom: 20px;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.sign-in-container button:hover {
+  color: #000;
+}
+.sign-in-container p {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #000;
+}
+#dark .sign-in-container p {
+  color: #fff;
+  border-top: 1px solid #be5c00;
+}
+
 /* page not found */
 .not-found h2 {
   font-size: 40px;

@@ -69,9 +69,9 @@ const SignUp = () => {
         <button type="submit">Create</button>
         {/* <button onClick={signInWithGoogle}>Log In With Google</button> */}
       </form>
-      <p>Already have an account?</p>
+      <p className="no-account">Already have an account?</p>
       <Link to="/login">
-        <p>Click here to log in</p>
+        <button>Click here to log in</button>
       </Link>
     </div>
   );
