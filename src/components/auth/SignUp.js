@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { signInWithPopup } from "firebase/auth";
-import { auth, db, googleProvider } from "../../firebase";
+// import { signInWithPopup } from "firebase/auth";
+// import { auth, googleProvider } from "../../firebase";
+import { db } from "../../firebase";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "./AuthContext";
@@ -32,16 +33,16 @@ const SignUp = () => {
     }
   };
 
-  const signInWithGoogle = (e) => {
-    e.preventDefault();
-    signInWithPopup(auth, googleProvider)
-      .then(() => {
-        history.push("/");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  // const signInWithGoogle = (e) => {
+  //   e.preventDefault();
+  //   signInWithPopup(auth, googleProvider)
+  //     .then(() => {
+  //       history.push("/");
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   return (
     <div className="sign-in-container">
@@ -66,7 +67,7 @@ const SignUp = () => {
           onChange={(e) => setPassword(e.target.value)}
         ></input>
         <button type="submit">Create</button>
-        <button onClick={signInWithGoogle}>Log In With Google</button>
+        {/* <button onClick={signInWithGoogle}>Log In With Google</button> */}
       </form>
       <p>Already have an account?</p>
       <Link to="/login">

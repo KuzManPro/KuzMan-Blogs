@@ -1,16 +1,20 @@
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, deleteDoc } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { db } from "../../firebase";
+import { useAuth } from "../auth/AuthContext";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const BlogDetails = () => {
   const [blog, setBlog] = useState(null);
   const location = useLocation();
+  const user = useAuth().currentUser;
+  const userId = user ? user.uid : null;
+  const params = new URLSearchParams(location.search);
+  const data = params.get("id");
+  const history = useHistory();
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const data = params.get("id");
-
     const fetchData = async () => {
       try {
         const blogRef = doc(db, "blogs", data);
@@ -26,7 +30,18 @@ const BlogDetails = () => {
     };
 
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
+
+  const handleDelete = async () => {
+    try {
+      await deleteDoc(doc(db, "blogs", data));
+      history.push('/');
+      alert("Blog deleted!")
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className="blog-details">
@@ -37,6 +52,18 @@ const BlogDetails = () => {
             Written by {blog.author} - {blog.time.toDate().toLocaleString()}
           </p>
           <div>{blog.body}</div>
+          { userId === data ? (
+            <button onClick={handleDelete}>Delete Blog</button>
+          ) : (
+            <button
+              disabled="disabled"
+              style={{
+                backgroundColor: "gray",
+              }}
+            >
+              Delete Blog
+            </button>
+          )}
         </article>
       )}
     </div>

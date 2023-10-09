@@ -46,7 +46,7 @@ const Create = () => {
       setIsPending(true);
       await setDoc(doc(db, "blogs", userId), newBlogData);
       history.push('/');
-      alert("New Blog Posted!");
+      alert("Blog created!");
     } catch (error) {
       console.log(error);
     }

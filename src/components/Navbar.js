@@ -22,7 +22,7 @@ const Navbar = () => {
           </Link>
         )}
       </div>
-      {currentUser && <p>Signed In as {currentUser.email}</p> && (
+      {currentUser && (
         <button
           onClick={() => logout()}
           style={{
