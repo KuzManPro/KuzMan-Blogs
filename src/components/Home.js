@@ -1,8 +1,8 @@
 import BlogList from "./blogs/BlogList";
-import useData from "../useData";
+import useBlogs from "../useBlogs";
 
 const Home = () => {
-  const blogs = useData();
+  const blogs = useBlogs();
   
   return (
     <div className="home">

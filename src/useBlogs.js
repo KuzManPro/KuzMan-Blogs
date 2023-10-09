@@ -3,7 +3,7 @@ import { db } from "./firebase";
 import { useEffect } from "react";
 import { getDocs, collection, query, orderBy } from "firebase/firestore";
 
-const useData = () => {
+const useBlogs = () => {
   const [blogList, setBlogList] = useState([]);
   const blogsCollectionRef = collection(db, "blogs");
   const orderedQuery = query(blogsCollectionRef, orderBy("time", "desc"));
@@ -23,9 +23,10 @@ const useData = () => {
     };
 
     getBlogList();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return ( blogList );
+  return blogList;
 };
 
-export default useData;
+export default useBlogs;

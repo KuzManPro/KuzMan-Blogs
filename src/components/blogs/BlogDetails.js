@@ -9,13 +9,12 @@ const BlogDetails = () => {
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    const data = params.get('id');
+    const data = params.get("id");
 
     const fetchData = async () => {
       try {
         const blogRef = doc(db, "blogs", data);
         const blogSnap = await getDoc(blogRef);
-        
         if (blogSnap.exists()) {
           setBlog(blogSnap.data());
         } else {
@@ -29,13 +28,14 @@ const BlogDetails = () => {
     fetchData();
   }, [location]);
 
-
   return (
     <div className="blog-details">
       {blog && (
         <article>
           <h2>{blog.title}</h2>
-          <p>Written by {blog.author} - {blog.time.toDate().toLocaleString()}</p>
+          <p>
+            Written by {blog.author} - {blog.time.toDate().toLocaleString()}
+          </p>
           <div>{blog.body}</div>
         </article>
       )}

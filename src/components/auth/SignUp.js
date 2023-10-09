@@ -1,32 +1,41 @@
 import { useState } from "react";
-import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "../../firebase";
+import { signInWithPopup } from "firebase/auth";
+import { auth, db, googleProvider } from "../../firebase";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { useAuth } from "./AuthContext";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 
 const SignUp = () => {
+  const { signup } = useAuth();
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const userData = {
+    username: username,
+    email: email,
+    password: password,
+    created: serverTimestamp(),
+  };
   const history = useHistory();
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log("User signed up:", userCredential.user);
-        history.push("/");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    try {
+      const userCredential = await signup(email, password);
+      await setDoc(doc(db, "users", userCredential.user.uid), userData);
+      history.push("/");
+      alert("Successfully signed in!");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const signInWithGoogle = (e) => {
     e.preventDefault();
     signInWithPopup(auth, googleProvider)
-      .then((userCredential) => {
-        console.log("User signed up:", userCredential.user);
+      .then(() => {
         history.push("/");
       })
       .catch((error) => {

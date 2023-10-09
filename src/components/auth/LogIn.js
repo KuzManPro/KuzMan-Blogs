@@ -15,7 +15,7 @@ const LogIn = () => {
     login(email, password)
       .then((userCredential) => {
         history.push("/");
-        console.log("User logged in:", userCredential.user);
+        alert("Successfully logged in!");
       })
       .catch((error) => {
         console.log(error);
