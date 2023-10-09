@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/KuzMan-Blogs/static/css/main.795d5ba1.css",
-    "main.js": "/KuzMan-Blogs/static/js/main.dab790a9.js",
-    "static/media/moon.ico": "/KuzMan-Blogs/static/media/moon.a4877d045519ddee7a7c.ico",
-    "static/media/sun.ico": "/KuzMan-Blogs/static/media/sun.54e23e31fa4c4f6c08a6.ico",
-    "index.html": "/KuzMan-Blogs/index.html",
-    "main.795d5ba1.css.map": "/KuzMan-Blogs/static/css/main.795d5ba1.css.map",
-    "main.dab790a9.js.map": "/KuzMan-Blogs/static/js/main.dab790a9.js.map"
+    "main.css": "/static/css/main.3b2b7066.css",
+    "main.js": "/static/js/main.5d06f6e6.js",
+    "static/media/moon.png": "/static/media/moon.8d6ef0ea0ef722df8c0c.png",
+    "static/media/sun.png": "/static/media/sun.002e4d12b4a5e4e81389.png",
+    "index.html": "/index.html",
+    "main.3b2b7066.css.map": "/static/css/main.3b2b7066.css.map",
+    "main.5d06f6e6.js.map": "/static/js/main.5d06f6e6.js.map"
   },
   "entrypoints": [
-    "static/css/main.795d5ba1.css",
-    "static/js/main.dab790a9.js"
+    "static/css/main.3b2b7066.css",
+    "static/js/main.5d06f6e6.js"
   ]
 }
