@@ -6,8 +6,6 @@ import { useAuth } from "./auth/AuthContext";
 const Navbar = () => {
   const { currentUser, logout } = useAuth();
 
-  console.log("authUser in Navbar:", currentUser);
-
   return (
     <nav className="navbar">
       <h1>KuzMan Blogs</h1>
@@ -24,7 +22,7 @@ const Navbar = () => {
           </Link>
         )}
       </div>
-      {currentUser && <p>Signed In as {currentUser.email}</p> && (
+      {currentUser && (
         <button
           onClick={() => logout()}
           style={{
