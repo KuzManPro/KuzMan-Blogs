@@ -14,7 +14,7 @@ const LogIn = () => {
     e.preventDefault();
     login(email, password)
       .then((userCredential) => {
-        history.push("/");
+        history.push("/KuzMan-Blogs/");
         alert("Successfully logged in!");
       })
       .catch((error) => {
@@ -41,7 +41,7 @@ const LogIn = () => {
         <button type="submit">Log In</button>
       </form>
       <p className="no-account">Don't have an account?</p>
-      <Link to="/signup">
+      <Link to="/KuzMan-Blogs/signup">
         <button>Click here to create one</button>
       </Link>
     </div>

@@ -11,13 +11,13 @@ const Navbar = () => {
       <h1>KuzMan Blogs</h1>
       <DarkMode />
       <div className="links">
-        <Link to="/">Home</Link>
+        <Link to="/KuzMan-Blogs/">Home</Link>
         {currentUser ? (
-          <Link to="/create">
+          <Link to="/KuzMan-Blogs/create">
             <button>New Blog</button>
           </Link>
         ) : (
-          <Link to="/login">
+          <Link to="/KuzMan-Blogs/login">
             <button>Log In</button>
           </Link>
         )}

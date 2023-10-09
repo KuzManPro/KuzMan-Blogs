@@ -24,19 +24,19 @@ function App() {
           <Navbar />
           <div className="content">
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/KuzMan-Blogs/">
                 <Home />
               </Route>
-              <Route path="/signup">
+              <Route path="/KuzMan-Blogs/signup">
                 <SignUp />
               </Route>
-              <Route path="/login">
+              <Route path="/KuzMan-Blogs/login">
                 <LogIn />
               </Route>
-              <Route path="/create">
+              <Route path="/KuzMan-Blogs/create">
                 <Create />
               </Route>
-              <Route path="/blogs/:id">
+              <Route path="/KuzMan-Blogs/blogs/:id">
                 <BlogDetails />
               </Route>
               <Route path="*">

@@ -26,7 +26,7 @@ const SignUp = () => {
     try {
       const userCredential = await signup(email, password);
       await setDoc(doc(db, "users", userCredential.user.uid), userData);
-      history.push("/");
+      history.push("/KuzMan-Blogs/");
       alert("Successfully signed in!");
     } catch (error) {
       console.log(error);
@@ -37,7 +37,7 @@ const SignUp = () => {
   //   e.preventDefault();
   //   signInWithPopup(auth, googleProvider)
   //     .then(() => {
-  //       history.push("/");
+  //       history.push("/KuzMan-Blogs/");
   //     })
   //     .catch((error) => {
   //       console.log(error);
@@ -70,7 +70,7 @@ const SignUp = () => {
         {/* <button onClick={signInWithGoogle}>Log In With Google</button> */}
       </form>
       <p className="no-account">Already have an account?</p>
-      <Link to="/login">
+      <Link to="/KuzMan-Blogs/login">
         <button>Click here to log in</button>
       </Link>
     </div>

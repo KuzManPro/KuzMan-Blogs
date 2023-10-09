@@ -36,7 +36,7 @@ const BlogDetails = () => {
   const handleDelete = async () => {
     try {
       await deleteDoc(doc(db, "blogs", data));
-      history.push('/');
+      history.push('/KuzMan-Blogs/');
       alert("Blog deleted!")
     } catch (error) {
       console.error(error);
